@@ -1,3 +1,4 @@
+from lib2to3.pytree import convert
 from re import X
 from stat import UF_OPAQUE
 from turtle import *
@@ -34,7 +35,7 @@ def drawLine():
     up()
     goto(-200, -100)
     down()
-    goto(200, 50)
+    goto(200, 100)
 
 def drawCircle():
     color('blue', 'black')
@@ -77,12 +78,34 @@ def drawCircle():
             goto(x, -y)
             x = x - 1
 
+def drawParabola():
+    color('green', 'black')
+    x = -25
+    #goto(x, -40)
+    
+    #parabola positiva
+    for x in range(-15,15):
+        y = x**2
+        goto(x, y)
+        down()
+    
+    up()
+    #parabola negativa
+    color('orange', 'black')
+    for x in range(-15,15):
+        y = x**2
+        goto(x, -y)
+        down()
+
+
 
 
 drawPlane()
 drawLine()
 up()
 drawCircle()
+up()
+drawParabola()
 #drawSquare()
 
 done()

@@ -97,7 +97,13 @@ def drawParabola():
         goto(x, -y)
         down()
 
-
+def drawSpiral():
+    home()
+    color('purple', 'black')
+    down()
+    for i in range(35):
+        forward(20 + i)
+        right(30 - i/1.5)
 
 
 drawPlane()
@@ -106,6 +112,8 @@ up()
 drawCircle()
 up()
 drawParabola()
+up()
+drawSpiral()
 #drawSquare()
 
 done()
